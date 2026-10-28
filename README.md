@@ -59,6 +59,8 @@ Developed at the University of Cape Town in 2026 under the supervision of Prof. 
 
 **Team members:**
 - Timera Govender
+- Tana Gwatikunda
+- Mlungisi Sibeko
 
 ## Getting Started
 
@@ -149,8 +151,6 @@ Example terrain files are provided in the `assets/DATA/` directory:
 - `D4-1024/`
 
 These directories contain `.elv` elevation datasets that can be used to explore EarthSketch's terrain loading, visualisation, and editing functionality.
-- Tana Gwatikunda
-- Mlungisi Sibeko
 
 ## Project Context
 
