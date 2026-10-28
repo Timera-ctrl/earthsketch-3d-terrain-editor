@@ -1,0 +1,47 @@
+//Test coverage plugin
+plugins {
+    id 'application'
+    id 'jacoco' 
+}
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+eclipse.project.name = appName + '-core'
+
+dependencies {
+    api "com.badlogicgames.gdx:gdx-bullet:$gdxVersion"
+    api "com.badlogicgames.gdx:gdx:$gdxVersion"
+    implementation "org.lwjgl:lwjgl-tinyfd:3.3.3"
+    runtimeOnly "org.lwjgl:lwjgl-tinyfd:3.3.3:natives-windows"
+    runtimeOnly "org.lwjgl:lwjgl-tinyfd:3.3.3:natives-macos"
+    runtimeOnly "org.lwjgl:lwjgl-tinyfd:3.3.3:natives-macos-arm64"
+    runtimeOnly "org.lwjgl:lwjgl-tinyfd:3.3.3:natives-linux"
+    
+    if(enableGraalNative == 'true') {
+        implementation "io.github.berstanio:gdx-svmhelper-annotations:$graalHelperVersion"
+    }
+    testImplementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
+    testImplementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    // testing with JUnit 4
+    testImplementation "junit:junit:4.13.2"
+}
+
+test {
+    testLogging {
+        events "passed", "skipped", "failed"
+        showExceptions true
+        showCauses true
+        showStackTraces true
+    }
+    ignoreFailures= true
+}
+
+jacocoTestReport {      
+    dependsOn test
+    reports {
+        html.required = true
+    }
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

@@ -1,0 +1,10 @@
+DATA/D1-256/D1-256.elv
+DATA/D1-256/base_pic.png
+DATA/D2-512/D2-512.elv
+DATA/D2-512/base_pic.png
+DATA/D3-1024/D3-1024.elv
+DATA/D3-1024/base_pic.png
+DATA/D4-1024/D4-1024.elv
+DATA/D4-1024/base_pic.png
+DATA/malformed/malformed_atomic_load_test.elv
+startup/splash.jpeg

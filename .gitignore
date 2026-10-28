@@ -1,24 +1,48 @@
-# Compiled class file
+
+# Gradle build files
+.gradle/
+**/build/
+
+# Compiled Java files
 *.class
+**/bin/
 
-# Log file
+# IDE configuration
+.idea/
+.vscode/
+*.iml
+.project
+.classpath
+.settings/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Temporary files and logs
 *.log
-
-# BlueJ files
+*.tmp
+*.bak
 *.ctxt
+.pytest_cache/
+**/.earthsketch-autosave/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# Test and coverage outputs
+*.exec
 
-# Package Files #
+# Application archives and distributions
 *.jar
 *.war
 *.nar
 *.ear
 *.zip
+*.tar
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Keep Gradle wrapper (required to build the project)
+!gradle/wrapper/gradle-wrapper.jar
+
+# JVM crash logs
 hs_err_pid*
 replay_pid*
