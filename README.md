@@ -59,6 +59,96 @@ Developed at the University of Cape Town in 2026 under the supervision of Prof. 
 
 **Team members:**
 - Timera Govender
+
+## Getting Started
+
+### Prerequisites
+
+Before running EarthSketch, ensure you have:
+
+- **Java Development Kit (JDK) 21**
+- **Git** for cloning the repository
+- A desktop environment with graphics support
+
+The project uses Gradle 9.6.1 through the included Gradle Wrapper, so a separate Gradle installation is not required.
+
+### 1. Clone the Repository
+
+Open a terminal and run:
+
+```bash
+git clone https://github.com/Timera-ctrl/earthsketch-3d-terrain-editor.git
+cd earthsketch-3d-terrain-editor
+```
+
+**Note:** The repository must be publicly accessible, or you must have permission to clone it.
+
+### 2. Build the Project
+
+On Linux, macOS, or WSL:
+
+```bash
+bash ./gradlew clean build --console=plain --info
+```
+
+On Windows (Command Prompt or PowerShell):
+
+```powershell
+.\gradlew.bat clean build --console=plain --info
+```
+
+This compiles the Java source code, executes the configured tests, and generates the application build artifacts.
+
+### 3. Run EarthSketch
+
+On Linux, macOS, or WSL:
+
+```bash
+bash ./gradlew lwjgl3:run --console=plain
+```
+
+On Windows:
+
+```powershell
+.\gradlew.bat lwjgl3:run --console=plain
+```
+
+This launches the EarthSketch desktop application using the libGDX LWJGL3 backend.
+
+**Note:** A graphical desktop environment is required. Running through WSL may require WSLg or another working graphical display configuration.
+
+### 4. Generate an Executable JAR
+
+To package the desktop application:
+
+```bash
+bash ./gradlew lwjgl3:jar --console=plain
+```
+
+The generated JAR is located at:
+
+```text
+lwjgl3/build/libs/EarthSketch-1.0.0.jar
+```
+
+You can launch the generated JAR using:
+
+```bash
+java -jar lwjgl3/build/libs/EarthSketch-1.0.0.jar
+```
+
+The generated JAR is excluded from Git version control because it is a build artifact.
+
+### 5. Sample Terrain Data
+
+Example terrain files are provided in the `assets/DATA/` directory:
+
+- `D1-256/`
+- `D2-512/`
+- `D3-1024/`
+- `D4-1024/`
+
+These directories contain `.elv` elevation datasets that can be used to explore EarthSketch's terrain loading, visualisation, and editing functionality.
 - Tana Gwatikunda
 - Mlungisi Sibeko
 
